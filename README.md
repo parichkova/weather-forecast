@@ -15,7 +15,7 @@ You will also see any lint errors in the console.
 ### `npm test`,  `npm run build`,  `npm run eject`
 These scripts can be used by default since this application was created via 'create-react-app'
 
-## INSTRUCTION
+## INSTRUCTIONS
 
 After cloning the repository:
 
@@ -28,4 +28,5 @@ NOTE THAT .env file where the API KEY to be used should stay in .gitignore.
 Now for this .evn file is removed from gitignore and has in it development API KEY, for your ease of testing.
 
 
+In the future: this application will use Redux, and fill have test coverage. It also may use context to pass data easier between components.
 
