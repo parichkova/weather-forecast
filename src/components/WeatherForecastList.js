@@ -16,27 +16,26 @@ class WeatherForecastList extends React.Component {
     };
   }
 
-  getSingleDayInfo = () => {
-    debugger;
-    const chunkSize = 8;
-    const rawArr = this.state.weatherInfoList;
+  getSingleDayInfo = (array, size) => {
+    const chunkSize = size;
+    const rawArr = array;
     const { length } = rawArr;
     let tempArray = [];
     let index = 0;
     let myChunk;
 
-    for (index; index < length; index += chunkSize) {
-      myChunk = rawArr.slice(index, index + chunkSize);
-
-      tempArray.push(myChunk);
+    if (size) {
+      for (index; index < length; index += chunkSize) {
+        myChunk = rawArr.slice(index, index + chunkSize);
+  
+        tempArray.push(myChunk);
+      }
     }
-
     return tempArray;
   }
 
   componentDidMount() {
-    debugger;
-    const days = this.getSingleDayInfo();
+    const days = this.getSingleDayInfo(this.state.weatherInfoList, 8);
 
     this.setState({
       days
@@ -48,14 +47,14 @@ class WeatherForecastList extends React.Component {
   }
 
   render() {
+    const array = this.getSingleDayInfo(this.state.weatherInfoList, 8);
     const mappedDays = this.state.days.map((day, idx) => {
       const firstDay = day[0];
       const dayWeather = firstDay.weather[0];
       return <WeatherForecastTile onClick={this.onClickHanlder} id={idx} key={firstDay.dt} main={dayWeather.main} wind={firstDay.wind.speed} date={firstDay.dt_txt} />
     });
 
-    debugger;
-  
+
     return (
       <div className={`weather-forecast ui container`} style={{ marginTop: '20px' }}>
         <h1 className='ui header'> 5 Day Forecast</h1>
@@ -63,7 +62,7 @@ class WeatherForecastList extends React.Component {
         <div className="ui grid holder">
           {mappedDays}
         </div>
-        <WeatherDetails arrayOfDays={this.getSingleDayInfo()[this.state.clickedIndex]} />
+        <WeatherDetails arrayOfDays={array[this.state.clickedIndex]} />
       </div>
     );
   }
