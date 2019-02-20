@@ -64,8 +64,7 @@ class WeatherForecastTile extends React.Component {
     render() {
         return(
             <div className="three wide column" id={this.state.index} onClick={this.onClickHandle}>
-                <div className="text--bold">{this.state.day}</div>
-                <div className="text--bold">{this.state.currentHour}</div>
+                <div className="text--bold">{this.state.day} {this.state.currentHour}</div>
                 <div>{this.state.main}</div>
                 <div className={`weather ${this.state.iconName}`}></div>
                 <div>Wind: {this.state.wind} km/h</div>

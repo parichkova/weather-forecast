@@ -1,15 +1,19 @@
 import React from 'react';
+import moment from 'moment';
 
 const WeatherDetail = (props) => {
-    // this.state = {
-    //     wind: 12,
-    // }
+    const {date} = props;
+    const d = new Date(date);
+    const dayName = moment(d).format('dddd');
+    const dateFormatted = moment(d).format('DD MM YYYY');
+    const time = moment(d).format('HH:mm')
 
     return (
-        <div>
-            <div className="ui column two">{props.date}</div>
-            <div className="ui column two">{props.wind}</div>
-            <div className="ui column two">{props.weather}</div>
+        <div className="holder-info">
+            <div className="column text--bold">{`${dayName}, ${time}`}</div>
+            <div className="column text--bold">{dateFormatted}</div>
+            <div className="column text--bold">{props.weather}</div>
+            <div className="column text--bold">Wind: {props.wind} km/h</div>
         </div>
     )
 }

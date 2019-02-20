@@ -28,7 +28,7 @@ class WeatherDetails extends React.Component {
         });
 
         return (
-        <div className="ui grid"> 
+        <div className="more-info-holder"> 
             {mappedHours}
         </div>)
     }

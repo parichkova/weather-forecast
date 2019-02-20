@@ -1,6 +1,6 @@
 .holder {
     margin-top: 20px !important;
-    min-height: 45vh;
+    min-height: 50vh;
     max-height: 75vh;
     display: flex;
     justify-content: center;
@@ -10,4 +10,27 @@
 
 .holder div {
     margin-top: 3px;
+}
+
+.holder-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.holder-info .column {
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+    margin-top: 3px;
+}
+
+.more-info-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 33px;
+    border: 1px solid #737373;
 }
