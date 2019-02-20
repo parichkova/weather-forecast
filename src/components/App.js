@@ -1,6 +1,6 @@
 import React from 'react';
 import forecast from '../api/forecast';
-import WeatherForecast from './WeatherForecast';
+import WeatherForecastList from './WeatherForecastList';
 import Spinner from './Spinner';
 
 class App extends React.Component {
@@ -8,7 +8,9 @@ class App extends React.Component {
     lat: 0,
     lon: 0,
     errorMessage: '',
-    weatherInfo: []
+    isReady: false,
+    weatherRegionInfo: '',
+    weatherListInfo: []
   };
 
   getWeatherInfo = async () => {
@@ -22,8 +24,7 @@ class App extends React.Component {
        },
     })
 
-    debugger;
-    this.setState({ weatherInfo: response.data.results });
+    this.setState({ isReady: true, weatherListInfo: response.data.list, weatherRegionInfo: response.data.city });
   }
 
   renderBody() {
@@ -31,8 +32,8 @@ class App extends React.Component {
       return  <div>Error: {this.state.errorMessage}</div> 
     }
 
-    if (!this.state.errorMessage && this.state.lat && this.state.lon) {
-      return <WeatherForecast />
+    if (this.state.isReady && this.state.lat && this.state.lon) {
+      return <WeatherForecastList weatherList={this.state.weatherListInfo} weatherRegion={this.state.weatherRegionInfo}/>
     }
 
     return  <Spinner/>
