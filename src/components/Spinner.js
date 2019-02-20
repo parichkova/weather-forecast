@@ -2,8 +2,6 @@ import React from 'react';
 
 class Spinner extends React.Component {
   constructor(props) {
-    console.log(props);
-
     super(props);
 
     this.state = {message: ''}
