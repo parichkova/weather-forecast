@@ -25,7 +25,10 @@ After cloning the repository:
 
 NOTE THAT .env file where the API KEY to be used should stay in .gitignore.
 
-Now for this .evn file is removed from gitignore and has in it development API KEY, for your ease of testing.
+Now for this .evn file, should be on the same level as src folder containing this:
+REACT_APP_API_KEY=b0c341414f2bd020036c03f81f8507f8
+
+this is  development API KEY, for your ease of testing.
 
 
 In the future: this application will use Redux, and fill have test coverage. It also may use context to pass data easier between components.
