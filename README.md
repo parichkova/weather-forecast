@@ -19,12 +19,13 @@ These scripts can be used by default since this application was created via 'cre
 
 After cloning the repository:
 
-1) in the folder when cloned write: ### npm install
-2) after successfully installing the dependencies write ### npm start
+1) in the folder when cloned write: npm install
+2) after successfully installing the dependencies write npm start
 3) on localhost:3000 the app will be loaded
 
-NOTE THAT .env file where the api key to be used should stay in .gitignore.
-Now for this .evn file is removed from gitignore and has in it development API_KEY, for your ease of testing.
+NOTE THAT .env file where the API KEY to be used should stay in .gitignore.
+
+Now for this .evn file is removed from gitignore and has in it development API KEY, for your ease of testing.
 
 
 
