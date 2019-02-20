@@ -1,8 +1,6 @@
 import React from 'react';
 import WeatherForecastTile from './WeatherForecastTile';
-
-
-//since we do not use lifecycle methods could be functional component
+import './WeatherForecastList.css';
 
 const WeatherForecastList = (props) => {
   const weatherInfoList = props.weatherList;
@@ -31,14 +29,15 @@ const WeatherForecastList = (props) => {
   const mappedDays = days.map(day => {
     const firstDay = day[0];
     const dayWeather = firstDay.weather[0];
-     return <WeatherForecastTile key={firstDay.dt} main={dayWeather.main} description={dayWeather.description} date={firstDay.dt_txt}/>
+    console.log(firstDay);
+     return <WeatherForecastTile key={firstDay.dt} main={dayWeather.main} wind={firstDay.wind.speed} date={firstDay.dt_txt}/>
   })
 
   return (
     <div className={`weather-forecast ui container`} style={{marginTop: '20px'}}>
       <h1 className='ui header'> 5 Day Forecast</h1>
-      <div className="ui container">{weatherRegionInformation.name}</div>
-      <div className="ui grid">
+      <div>{weatherRegionInformation.name}</div>
+      <div className="ui grid holder">
         {mappedDays}
       </div>
     </div>

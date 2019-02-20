@@ -1,3 +1,38 @@
+html,
+body {
+  font-family: 'Roboto', 'sans-serif';
+}
+
 .text--bold {
   font-weight: bold;
+}
+
+.weather {
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+}
+
+.sun {
+  background: url('https://i2.wp.com/www.thegeniusmedia.com.ng/wp-content/uploads/2018/03/Sunny_Weather.jpg?fit=600%2C375&ssl=1');
+  background-size: cover;
+  background-position: center;
+}
+
+.rain {
+  background: url('https://kurir.mk/wp-content/uploads/2018/03/dozd3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.snow {
+  background: url('https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/520560-istock-614704346.jpg?itok=8cYvvmg5&resize=1100x1100');
+  background-size: cover;
+  background-position: center;
+}
+
+.cloud {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ummb2kMpqu-pJXLsALru01MtFBP4U6SrQCQT_3KSmbt2lRys8Q');
+  background-size: cover;
+  background-position: center;
 }
