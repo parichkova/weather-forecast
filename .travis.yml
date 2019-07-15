@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- "stable"
+cache:
+  directories:
+  - node_modules
+env:
+  - NODE_ENV="development"
+  - NODE_ENV="production";SESSION_SECRET="la li"
+script:  
+  - npm run test
+  - npm run build
+  - npm run test:coverage
+
+  deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $github_token
+    local_dir: build
+    on:
+      branch: master
